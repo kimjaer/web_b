@@ -23,31 +23,35 @@ a{text-decoration: none; font-family: "맑은고딕",sans-serif; color: #333333;
 #hd{
     background-color: rosybrown;
 }
-
+#gnb >li{
+    background-color: yellowgreen;
+}
 #gnb>li>a{
     font-size: 1.8rem;
     padding: 0 2.5rem;
+    background-color: red;/* 확인용 */
 }
 
-#gnb ul{
-    background-color: black;
-    top: 100%;
+/* #gnb ul{
+    background-color: cornflowerblue;
+    top: 69px;
     left: 0;
     min-width: 150px;
     width: 100%;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
-}
+    z-index: 10000;
+} */
 #gnb ul::after, #gnb ul::before{
     content: "";
     display: block;
     height: 1rem;
 }
-#gmb ul a{
+#gnb ul a{
     color: white;
     line-height: 2;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-indent: 2rem;
     display: block;
 }
@@ -57,7 +61,7 @@ a{text-decoration: none; font-family: "맑은고딕",sans-serif; color: #333333;
 
 /* 대메뉴 활성화 꼭 외우기*/
 #gnb li:hover > a{
-    background-color: black;
+    background-color: cyan;
     color: white;
 }
 /* 소메뉴 활성화 꼭 외우기 */
@@ -68,4 +72,94 @@ a{text-decoration: none; font-family: "맑은고딕",sans-serif; color: #333333;
 }
 
 
-/* ㄴ아ㅓㄹ나이ㅓ호라ㅓ놇; */
+/* ------------------------------------------- */
+/* 전체 소메뉴 나오기 */
+#gnb ul{
+    background-color: cornflowerblue;
+    top: 69px;
+    left:0; 
+    min-width:150px;
+    width:100%;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 10000;
+}
+#gnb:hover ul{
+    height: 225px;
+}
+
+#gnb:hover ul{
+    max-height: 225px;
+} 
+
+#gnb::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1200px;
+    background-color: cornflowerblue;
+    top: 100px;
+    height: 0;
+    transition: 0.5s;
+    left: 0;
+}
+/* 커튼 */
+#gnb:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1200px;
+    background-color: cornflowerblue;
+    top:100px;
+    height:0;
+    transition: 0.5s;
+    left:0
+}
+#gnb:hover:after{
+    height: 225px;
+}
+
+
+ /* 하나씩 소메뉴 나오기 */
+/* #gnb  ul{
+    background-color: cornflowerblue;
+    top:100%;
+    left:0; 
+    min-width:150px;
+    width:100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+#gnb:hover ul{
+    max-height: 225px;
+}
+ */
+
+ /* fade 배너 */
+.swiper-slide{
+    left: 0;top: 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+.swiper-slide.act{
+    opacity: 1;
+}
+.tabwrap h2.on{
+    color: red;
+}
+.tabwrap .on{
+    display: block !important;
+}
+.tabwrap > div > div > div{
+    display: none;
+}
+#pop{
+    background-color: white;
+    width:300px;
+    height: 300px;
+    left:0;right:0; top:0; bottom:0; margin: auto;
+    z-index: 1000000000000000000;
+    display: none;
+}
